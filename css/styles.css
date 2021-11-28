@@ -3,4 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-size: 16px;
+}
 
+.hide {
+    display: none;
+}
+
+.square, .triangle, .circle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 2.5rem;
+    color: white;
+}
+.square {
+    background-color: seagreen;
+}
+.triangle {
+    background-color: tomato;
+}
+.circle {
+    background-color: blueviolet;
+}
