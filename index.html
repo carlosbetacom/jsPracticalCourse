@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Práctico de Javascript</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Figuras geométricas</h1>
+    <header>
+        Ejercicios JS
+    </header>
+    <main>
+        <section>
+            <h2>Figuras geométricas</h2>
+            <p>Este programa calcula el perímetro y el área de un <b>cuadrado</b>, <b>triángulo</b> o <b>círculo</b>.</p>
+            <select name="figureSelected" id="figureSelected" onchange="showFormFigure()">
+                <option value="0">Selecciona una figura...</option>
+                <option value="square">Cuadrado</option>
+                <option value="triangle">Triángulo</option>
+                <option value="circle">Círculo</option>
+            </select>
+            <div id="square" class="square hide">
+                Seleccionaste el Cuadrado
+            </div>
+            <div id="triangle" class="triangle hide">
+                Seleccionaste el Triángulo
+            </div>
+            <div id="circle" class="circle hide">
+                Seleccionaste el Círculo
+            </div>
+        </section>
+    </main>
+
+
     <script src="./js/figures.js"></script>
 </body>
 </html>
