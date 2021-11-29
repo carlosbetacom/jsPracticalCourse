@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         Ejercicios JS
     </header>
-    <main>
-        <section>
-            <h2>Figuras geométricas</h2>
-            <p>Este programa calcula el perímetro y el área de un <b>cuadrado</b>, <b>triángulo</b> o <b>círculo</b>.</p>
-            <select name="figureSelected" id="figureSelected" onchange="showFormFigure()">
-                <option value="0">Selecciona una figura...</option>
-                <option value="square">Cuadrado</option>
-                <option value="triangle">Triángulo</option>
-                <option value="circle">Círculo</option>
-            </select>
-            <div id="square" class="square hide">
+    <main class="main">
+        <section class="figures">
+            <h2 class="figures__title">Figuras geométricas</h2>
+            <p class="figures__text">Este programa calcula el perímetro y el área de un <b>cuadrado</b>, <b>triángulo</b> o <b>círculo</b>.</p>
+            <div class="selectFigures">
+                <span class="selectFigures__text">Selecciona una figura: </span>
+                <select class="selectFigures__select" name="figureSelected" id="figureSelected" onchange="showFormFigure()">
+                    <option value="square">Cuadrado</option>
+                    <option value="triangle">Triángulo</option>
+                    <option value="circle">Círculo</option>
+                </select>
+            </div>
+            <div id="square" class="square">
                 Seleccionaste el Cuadrado
             </div>
             <div id="triangle" class="triangle hide">
