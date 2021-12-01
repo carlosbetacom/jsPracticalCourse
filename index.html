@@ -44,7 +44,31 @@
             </div>
 
             <div id="triangle" class="triangle hide">
-                Seleccionaste el Triángulo
+                <h3 class="triangle__title">Perímetro y área de un triángulo equilatero</h3>
+
+                <form class="triangle__sideInput">
+                    <fieldset>
+                        <legend>Datos del triángulo</legend>
+                        <label for="sideTriangleA">
+                            Lado A: <input id="sideTriangleA" type="number" placeholder="0" oninput="calculateTriangle()"> mts.
+                        </label>
+                        <label for="sideTriangleB">
+                            Lado B: <input id="sideTriangleB" type="number" placeholder="0" disabled> mts.
+                        </label>
+                        <label for="baseTriangle">
+                            Base: <input id="baseTriangle" type="number" placeholder="0" disabled> mts.
+                        </label>
+                        <label for="heightTriangle">
+                            Altura: <input id="heightTriangle" type="number" placeholder="0" disabled> mts.
+                        </label>
+                        <!-- <button onclick="calculateTriangle()">Calcular</button> -->
+                    </fieldset>
+                </form>
+
+                <p class="triangleResults">
+                    Perimetro = <span id="perimeterTriangle">0</span> metros. 
+                    Área = <span id="areaTriangle">0</span> metros cuadrados.
+                </p>
             </div>
 
             <div id="circle" class="circle hide">
