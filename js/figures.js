@@ -18,7 +18,7 @@ function showFormFigure() {
 * Square
 ********************/
 
-// Getting side element
+// Getting side square element
 const sideSquareElment = document.getElementById('sideSquare');
 
 // Getting element to write results
@@ -40,11 +40,48 @@ function executeAreaSquare() {
     areaSquareElement.innerHTML = String(area);
 }
 
+/*******************
+* Equilateral Triangle
+********************/
 
+// Getting triangle elements
+const sideTriangleA = document.getElementById('sideTriangleA');
+const sideTriangleB = document.getElementById('sideTriangleB');
+const baseTriangle = document.getElementById('baseTriangle');
+const heightTriangle = document.getElementById('heightTriangle');
+
+// Getting element to write results
+const perimeterTriangleElement = document.getElementById('perimeterTriangle');
+const areaTriangleElement = document.getElementById('areaTriangle');
+
+// Function to get two decimals
+let getTwoDecimals = number => Number.parseFloat(number).toFixed(2);
+
+// Function to calculate equilateral triangle height
+let heightEqTriangle = side => Math.sqrt(side * 3) / 2;
+
+// Functions to calculate perimeter and area
+let perimeterEqTriangle = side => side * 3;
+let areaEqTriangle = side => (side * heightEqTriangle(side)) / 2;
+
+// Function to fill inputs (sideTriangleB and baseTriangle) with the sideTriangleA value
+function fillInputs() {
+    sideTriangleB.value = sideTriangleA.value;
+    baseTriangle.value = sideTriangleA.value;
+    heightTriangle.value = heightEqTriangle(sideTriangleA);
+}
+
+// Functions to execute the calculation of the perimeter and area
+function executePerimeterEqTriangle() {
+    let perimeter = perimeterEqTriangle(sideTriangleA.value);
+    perimeterTriangleElement.innerHTML = String(perimeter);
+}
+function executeAreaEqTriangle() {
+    let area = areaEqTriangle(sideTriangleA.value);
+    areaTriangleElement.innerHTML = String(area);
+}
 
 function calculateTriangle() {
-
-    const sideTriangleA = Number(document.getElementById('sideTriangleA').value);
 
     const sideTriangleB = sideTriangleA;
     document.getElementById('sideTriangleB').value = sideTriangleA;
@@ -52,8 +89,7 @@ function calculateTriangle() {
     const baseTriangle = sideTriangleA;
     document.getElementById('baseTriangle').value = sideTriangleA;
 
-    let heightTriangle = Math.sqrt((sideTriangleB * sideTriangleB) - ((baseTriangle / 2) * (baseTriangle / 2)));
-    heightTriangle = Number.parseFloat(heightTriangle).toFixed(2);
+    
     document.getElementById('heightTriangle').value = heightTriangle;
 
     let perimeterTriangle = sideTriangleA * 3;
@@ -62,8 +98,7 @@ function calculateTriangle() {
     let areaTriangle = (baseTriangle * heightTriangle) / 2;
     areaTriangle = Number.parseFloat(areaTriangle).toFixed(2);
 
-    const perimeterTriangleElement = document.getElementById('perimeterTriangle');
-    const areaTriangleElement = document.getElementById('areaTriangle');
+    
 
     perimeterTriangleElement.innerHTML = String(perimeterTriangle);
     areaTriangleElement.innerHTML = String(areaTriangle);
