@@ -14,22 +14,30 @@ function showFormFigure() {
 
 }
 
-function calculateSquare() {
+/*******************
+* Square
+********************/
 
-    const sideSquare = String(document.getElementById('sideSquare').value);
+// Getting side value
+const sideSquare = Number(document.getElementById('sideSquare').value);
 
-    // Calculating perimeter and area
-    let perimeterSquare = sideSquare * 4;
-    let areaSquare = sideSquare * sideSquare;
+// Functions to calculate perimetr and area
+let perimeterSquare = side => side * 4;
+let areaSquare = side => side * side;
 
-    // Write results
+// Functions to execute the calculation of the perimeter and area
+function executePerimeterSquare() {
+    let perimeter = perimeterSquare(sideSquare);
+
     let perimeterSquareElement = document.getElementById('perimeterSquare');
+    perimeterSquareElement.innerHTML = String(perimeter);
+}
+
+function executeAreaSquare() {
+    let area = areaSquare(sideSquare);
+
     let areaSquareElement = document.getElementById('areaSquare');
-
-    // Showing results
-    perimeterSquareElement.innerHTML = String(perimeterSquare);
     areaSquareElement.innerHTML = String(areaSquare);
-
 }
 
 function calculateTriangle() {
