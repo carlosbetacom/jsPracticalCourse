@@ -32,17 +32,6 @@ function calculateSquare() {
 
 }
 
-/*
-Triangle:
-
-const sideTriangle1;
-const sideTriangle2;
-const baseTriangle;
-const heightTriangle;
-
-let perimeterTriangle = sideTriangle1 + sideTriangle2 + baseTriangle;
-let areaTriangle = (baseTriangle * heightTriangle) / 2;
-*/
 function calculateTriangle() {
 
     const sideTriangleA = Number(document.getElementById('sideTriangleA').value);
@@ -71,14 +60,22 @@ function calculateTriangle() {
 
 }
 
-/*
-Circle:
+function calculateCircle() {
 
-const radio;
-const diameter = radio * 2;
-const PI = Math.PI;
+    const radio = Number(document.getElementById('radio').value);
+    let diameter = radio * 2;
+    const PI = Math.PI;
 
-let circunference = diameter * PI;
-let areaCircle = (radio * radio) * PI;
+    let circunference = diameter * PI;
+    circunference = Number.parseFloat(circunference).toFixed(2);
 
-*/
+    let areaCircle = (radio * radio) * PI;
+    areaCircle = Number.parseFloat(areaCircle).toFixed(2);
+
+    const perimeterCircleElement = document.getElementById('perimeterCircle');
+    const areaCircleElement = document.getElementById('areaCircle');
+
+    perimeterCircleElement.innerHTML = String(circunference);
+    areaCircleElement.innerHTML = String(areaCircle);
+
+}
