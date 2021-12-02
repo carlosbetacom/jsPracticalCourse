@@ -46,12 +46,22 @@ let areaTriangle = (baseTriangle * heightTriangle) / 2;
 function calculateTriangle() {
 
     const sideTriangleA = Number(document.getElementById('sideTriangleA').value);
+
     const sideTriangleB = sideTriangleA;
+    document.getElementById('sideTriangleB').value = sideTriangleA;
+
     const baseTriangle = sideTriangleA;
+    document.getElementById('baseTriangle').value = sideTriangleA;
+
     let heightTriangle = Math.sqrt((sideTriangleB * sideTriangleB) - ((baseTriangle / 2) * (baseTriangle / 2)));
+    heightTriangle = Number.parseFloat(heightTriangle).toFixed(2);
+    document.getElementById('heightTriangle').value = heightTriangle;
 
     let perimeterTriangle = sideTriangleA * 3;
+    perimeterTriangle = Number.parseFloat(perimeterTriangle).toFixed(2);
+
     let areaTriangle = (baseTriangle * heightTriangle) / 2;
+    areaTriangle = Number.parseFloat(areaTriangle).toFixed(2);
 
     const perimeterTriangleElement = document.getElementById('perimeterTriangle');
     const areaTriangleElement = document.getElementById('areaTriangle');
