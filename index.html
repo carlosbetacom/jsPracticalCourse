@@ -34,12 +34,23 @@
             <div id="square" class="square">
                 <h3 class="square__title">Perímetro y área de un cuadrado</h3>
 
-                <div class="square__sideInput">
-                    <span>Lado: </span>
-                    <input id="sideSquare" type="number" placeholder="0" oninput="calculateSquare()"><span> mts.</span>
-                    <!-- <button id="buttonSquare" type="button" onclick="calculateSquare()">Calcular</button> -->
-                </div>
-                
+                <form>
+                    <fieldset>
+                        <legend>Datos del cuadrado</legend>
+                        <label for="sideSquare">
+                            Lado: 
+                            <input id="sideSquare" type="number" placeholder="0" >
+                            <span> mts.</span>
+                        </label>
+                        <button id="calculatePerimeterSquare" type="button" onclick="executePerimeterSquare()">
+                            Calcular perimetro
+                        </button>
+                        <button id="calculateAreaSquare" type="button" onclick="executeAreaSquare()">
+                            Calcular área
+                        </button>
+                    </fieldset>
+                </form>
+
                 <p class="squareResults">
                     Perimetro = <span id="perimeterSquare">0</span> metros. 
                     Área = <span id="areaSquare">0</span> metros cuadrados.

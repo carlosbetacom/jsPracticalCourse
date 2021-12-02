@@ -18,8 +18,12 @@ function showFormFigure() {
 * Square
 ********************/
 
-// Getting side value
-const sideSquare = Number(document.getElementById('sideSquare').value);
+// Getting side element
+const sideSquareElment = document.getElementById('sideSquare');
+
+// Getting element to write results
+let perimeterSquareElement = document.getElementById('perimeterSquare');
+let areaSquareElement = document.getElementById('areaSquare');
 
 // Functions to calculate perimetr and area
 let perimeterSquare = side => side * 4;
@@ -27,18 +31,16 @@ let areaSquare = side => side * side;
 
 // Functions to execute the calculation of the perimeter and area
 function executePerimeterSquare() {
-    let perimeter = perimeterSquare(sideSquare);
-
-    let perimeterSquareElement = document.getElementById('perimeterSquare');
+    let perimeter = perimeterSquare(sideSquareElment.value);
     perimeterSquareElement.innerHTML = String(perimeter);
 }
 
 function executeAreaSquare() {
-    let area = areaSquare(sideSquare);
-
-    let areaSquareElement = document.getElementById('areaSquare');
-    areaSquareElement.innerHTML = String(areaSquare);
+    let area = areaSquare(sideSquareElment.value);
+    areaSquareElement.innerHTML = String(area);
 }
+
+
 
 function calculateTriangle() {
 
