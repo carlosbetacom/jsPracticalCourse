@@ -1,15 +1,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    /* Fonts */
+    --primay-font: 'Roboto', sans-serif;
+    /* Colors */
+    --yellow: #FFCC1D;
+    --dark-green: #0B4619;
+    --green: #116530;
+    --beige: #E8E8CC;
+    --color-title: rgba(0,0,0,0.55);
+    --color-text: rgba(0,0,0,0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 html {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: var(--primay-font);
+    font-weight: 400;
     font-size: 16px;
+}
+body {
+    background-color: var(--beige);
+    color: var(--color-text);
 }
 h1 {
     font-size: 2.5rem;
@@ -17,12 +33,39 @@ h1 {
 h2 {
     font-size: 2rem;
 }
+.container {
+    max-width: 75rem;
+}
 
 .header {
-    padding: 1rem .75rem;
-    color: white;
-    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.header__navbar {
+    display: flex;
+    align-items: center;
+}
+.header nav {
+    
+}
+.header__text {
+    color: var(--color-title);
+    font-weight: 700;
+}
+.nav {
+    display: flex;
+    list-style-type: none;
+}
+.nav li a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.75rem;
+}
+
 .main {
     max-width: 50rem;
     margin: 2.5rem auto;
