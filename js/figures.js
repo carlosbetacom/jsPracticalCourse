@@ -68,59 +68,66 @@ let areaEqTriangle = side => (side * heightEqTriangle(side)) / 2;
 function fillInputs() {
     sideTriangleB.value = sideTriangleA.value;
     baseTriangle.value = sideTriangleA.value;
-    heightTriangle.value = heightEqTriangle(sideTriangleA);
+    heightTriangle.value = getTwoDecimals(heightEqTriangle(sideTriangleA.value));
 }
 
 // Functions to execute the calculation of the perimeter and area
 function executePerimeterEqTriangle() {
     let perimeter = perimeterEqTriangle(sideTriangleA.value);
+    perimeter = getTwoDecimals(perimeter);
     perimeterTriangleElement.innerHTML = String(perimeter);
 }
 function executeAreaEqTriangle() {
     let area = areaEqTriangle(sideTriangleA.value);
+    area = getTwoDecimals(area);
     areaTriangleElement.innerHTML = String(area);
 }
 
+// Main function to execute calculates
 function calculateTriangle() {
-
-    const sideTriangleB = sideTriangleA;
-    document.getElementById('sideTriangleB').value = sideTriangleA;
-
-    const baseTriangle = sideTriangleA;
-    document.getElementById('baseTriangle').value = sideTriangleA;
-
-    
-    document.getElementById('heightTriangle').value = heightTriangle;
-
-    let perimeterTriangle = sideTriangleA * 3;
-    perimeterTriangle = Number.parseFloat(perimeterTriangle).toFixed(2);
-
-    let areaTriangle = (baseTriangle * heightTriangle) / 2;
-    areaTriangle = Number.parseFloat(areaTriangle).toFixed(2);
-
-    
-
-    perimeterTriangleElement.innerHTML = String(perimeterTriangle);
-    areaTriangleElement.innerHTML = String(areaTriangle);
-
+    fillInputs();
+    executePerimeterEqTriangle();
+    executeAreaEqTriangle();
 }
 
+/*******************
+* Circle
+********************/
+
+// Getting radio element
+const radio = document.getElementById('radio');
+
+// Getting element to write results
+const perimeterCircleElement = document.getElementById('perimeterCircle');
+const areaCircleElement = document.getElementById('areaCircle');
+
+// Function to calculate diameter
+let diameter = r => r * 2;
+
+// PI
+const PI = Math.PI;
+
+// Functions to calculate circunference and area
+let circunference = d => d * PI;
+let areaCircle = r => (r * r) * PI;
+
+// Functions to execute the calculation of the perimeter and area
+function executeCircunference() {
+    let d = diameter(radio.value);
+    let perimeter = circunference(d);
+    perimeter = getTwoDecimals(perimeter);
+    perimeterCircleElement.innerHTML = String(perimeter);
+}
+function executeAreaCircle() {
+    let area = areaCircle(radio.value);
+    area = getTwoDecimals(area);
+    areaCircleElement.innerHTML = String(area);
+}
+
+// Main function to execute calculates
 function calculateCircle() {
 
-    const radio = Number(document.getElementById('radio').value);
-    let diameter = radio * 2;
-    const PI = Math.PI;
-
-    let circunference = diameter * PI;
-    circunference = Number.parseFloat(circunference).toFixed(2);
-
-    let areaCircle = (radio * radio) * PI;
-    areaCircle = Number.parseFloat(areaCircle).toFixed(2);
-
-    const perimeterCircleElement = document.getElementById('perimeterCircle');
-    const areaCircleElement = document.getElementById('areaCircle');
-
-    perimeterCircleElement.innerHTML = String(circunference);
-    areaCircleElement.innerHTML = String(areaCircle);
+    executeCircunference();
+    executeAreaCircle();
 
 }
