@@ -25,10 +25,13 @@
 
     <main class="main">
 
-        <section class="figures">
+        <section class="card figures">
 
-            <h2 class="figures__title">Figuras geométricas</h2>
-            <p class="figures__text">Este programa calcula el perímetro y el área de un <b>cuadrado</b>, <b>triángulo</b> o <b>círculo</b>.</p>
+            <h2 class="card__title">Figuras geométricas</h2>
+            <p class="card__desc">
+                Este programa calcula el perímetro y el área de un <b>cuadrado</b>, 
+                <b>triángulo</b> o <b>círculo</b>.
+            </p>
             
             <!-- Drop down list -->
             <div class="selectFigures">
@@ -50,20 +53,19 @@
                         <label for="sideSquare">
                             Lado: 
                             <input id="sideSquare" type="number" placeholder="0" >
-                            <span> mts.</span>
                         </label>
-                        <button id="calculatePerimeterSquare" type="button" onclick="executePerimeterSquare()">
+                        <button id="calculatePerimeterSquare" class="btn" type="button" onclick="executePerimeterSquare()">
                             Calcular perimetro
                         </button>
-                        <button id="calculateAreaSquare" type="button" onclick="executeAreaSquare()">
+                        <button id="calculateAreaSquare" class="btn" type="button" onclick="executeAreaSquare()">
                             Calcular área
                         </button>
                     </fieldset>
                 </form>
 
                 <p class="squareResults">
-                    Perimetro = <span id="perimeterSquare">0</span> metros. 
-                    Área = <span id="areaSquare">0</span> metros cuadrados.
+                    Perimetro = <span id="perimeterSquare">0</span>, 
+                    Área = <span id="areaSquare">0</span>
                 </p>
             </div>
 
@@ -75,24 +77,24 @@
                     <fieldset>
                         <legend>Datos del triángulo</legend>
                         <label for="sideTriangleA">
-                            Lado A: <input id="sideTriangleA" type="number" placeholder="0" oninput="calculateTriangle()"> mts.
+                            Lado A:<br><input id="sideTriangleA" type="number" placeholder="0" oninput="calculateTriangle()">
                         </label>
                         <label for="sideTriangleB">
-                            Lado B: <input id="sideTriangleB" type="number" placeholder="0" disabled> mts.
+                            Lado B:<br><input id="sideTriangleB" type="number" placeholder="0" disabled>
                         </label>
                         <label for="baseTriangle">
-                            Base: <input id="baseTriangle" type="number" placeholder="0" disabled> mts.
+                            Base:<br><input id="baseTriangle" type="number" placeholder="0" disabled>
                         </label>
                         <label for="heightTriangle">
-                            Altura: <input id="heightTriangle" type="number" placeholder="0" disabled> mts.
+                            Altura:<br><input id="heightTriangle" type="number" placeholder="0" disabled>
                         </label>
                         <!-- <button onclick="calculateTriangle()">Calcular</button> -->
                     </fieldset>
                 </form>
 
                 <p class="triangleResults">
-                    Perimetro = <span id="perimeterTriangle">0</span> metros. 
-                    Área = <span id="areaTriangle">0</span> metros cuadrados.
+                    Perimetro = <span id="perimeterTriangle">0</span>, 
+                    Área = <span id="areaTriangle">0</span>
                 </p>
             </div>
 
@@ -112,14 +114,18 @@
                 </form>
 
                 <p class="circleResults">
-                    Perimetro = <span id="perimeterCircle">0</span> metros.<br>
-                    Área = <span id="areaCircle">0</span> metros cuadrados.
+                    Perimetro = <span id="perimeterCircle">0</span>,
+                    Área = <span id="areaCircle">0</span>
                 </p>
             </div>
 
         </section>
 
     </main>
+
+    <footer class="footer container">
+        <p>Hecho con 💚 por <a href="https://twitter.com/carlosbetacom" target="_blank">Carlos Beta</a></p>
+    </footer>
 
 
     <script src="./js/figures.js"></script>
