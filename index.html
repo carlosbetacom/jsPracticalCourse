@@ -36,7 +36,7 @@
             <!-- Drop down list -->
             <div class="selectFigures">
                 <span class="selectFigures__text">Selecciona una figura: </span>
-                <select class="selectFigures__select" name="figureSelected" id="figureSelected" onchange="showFormFigure()">
+                <select class="selectFigures__select" name="figureSelected" id="figureSelected">
                     <option value="square">Cuadrado</option>
                     <option value="triangle">Triángulo</option>
                     <option value="circle">Círculo</option>
@@ -54,10 +54,10 @@
                             Lado: 
                             <input id="sideSquare" type="number" placeholder="0" >
                         </label>
-                        <button id="calculatePerimeterSquare" class="btn" type="button" onclick="executePerimeterSquare()">
+                        <button id="calculatePerimeterSquare" class="btn" type="button">
                             Calcular perimetro
                         </button>
-                        <button id="calculateAreaSquare" class="btn" type="button" onclick="executeAreaSquare()">
+                        <button id="calculateAreaSquare" class="btn" type="button">
                             Calcular área
                         </button>
                     </fieldset>
@@ -77,7 +77,7 @@
                     <fieldset>
                         <legend>Datos del triángulo</legend>
                         <label for="sideTriangleA">
-                            Lado A:<br><input id="sideTriangleA" type="number" placeholder="0" oninput="calculateTriangle()">
+                            Lado A:<br><input id="sideTriangleA" type="number" placeholder="0">
                         </label>
                         <label for="sideTriangleB">
                             Lado B:<br><input id="sideTriangleB" type="number" placeholder="0" disabled>
@@ -107,7 +107,7 @@
                     <fieldset>
                         <legend>Datos del circulo</legend>
                         <label for="radio">
-                            Radio: <input id="radio" type="number" placeholder="0" oninput="calculateCircle()">
+                            Radio: <input id="radio" type="number" placeholder="0">
                         </label>
                     </fieldset>
 
@@ -147,6 +147,6 @@
     </footer>
 
 
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

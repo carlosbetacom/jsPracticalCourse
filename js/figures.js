@@ -3,15 +3,26 @@
 ********************/
 
 // Getting side square element
-export const sideSquareElment = document.getElementById('sideSquare');
+const sideSquareElment = document.getElementById('sideSquare');
 
 // Getting element to write results
-export let perimeterSquareElement = document.getElementById('perimeterSquare');
-export let areaSquareElement = document.getElementById('areaSquare');
+let perimeterSquareElement = document.getElementById('perimeterSquare');
+let areaSquareElement = document.getElementById('areaSquare');
 
 // Functions to calculate perimetr and area
-export let perimeterSquare = side => side * 4;
-export let areaSquare = side => side * side;
+let perimeterSquare = side => side * 4;
+let areaSquare = side => side * side;
+
+// Functions to execute the calculation of the perimeter and area
+function executePerimeterSquare() {
+    let perimeter = perimeterSquare(sideSquareElment.value);
+    perimeterSquareElement.innerHTML = String(perimeter);
+}
+
+function executeAreaSquare() {
+    let area = areaSquare(sideSquareElment.value);
+    areaSquareElement.innerHTML = String(area);
+}
 
 /*******************
 * Equilateral Triangle
@@ -103,4 +114,11 @@ function calculateCircle() {
     executeCircunference();
     executeAreaCircle();
 
+}
+
+export {
+    executePerimeterSquare,
+    executeAreaSquare,
+    calculateTriangle,
+    calculateCircle
 }

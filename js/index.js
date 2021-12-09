@@ -1,28 +1,10 @@
-import * as figuresModule from "figures";
+import * as general from "./general.js";
+import * as figures from "./figures.js";
 
-function showFormFigure() {
+document.getElementById("figureSelected").addEventListener("change", general.showFormFigure);
 
-    // Hide all figures
-    document.getElementById('square').classList.add('hide');
-    document.getElementById('triangle').classList.add('hide');
-    document.getElementById('circle').classList.add('hide');
-    
-    // Obtaining selected figure
-    let idName = document.getElementById("figureSelected").value;
-    let elementFigure = document.getElementById(idName);
+document.getElementById("calculatePerimeterSquare").addEventListener("click", figures.executePerimeterSquare);
+document.getElementById("calculateAreaSquare").addEventListener("click", figures.executeAreaSquare);
+document.getElementById("sideTriangleA").addEventListener("input", figures.calculateTriangle);
+document.getElementById("radio").addEventListener("input", figures.calculateCircle);
 
-    // Showing figure selected
-    if(idName != '0') elementFigure.classList.remove('hide');
-
-}
-
-// Functions to execute the calculation of the perimeter and area
-function executePerimeterSquare() {
-    let perimeter = figuresModule.perimeterSquare(figuresModule.sideSquareElment.value);
-    figuresModule.perimeterSquareElement.innerHTML = String(perimeter);
-}
-
-function executeAreaSquare() {
-    let area = figuresModule.areaSquare(figuresModule.sideSquareElment.value);
-    figuresModule.areaSquareElement.innerHTML = String(area);
-}
