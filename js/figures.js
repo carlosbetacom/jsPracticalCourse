@@ -1,44 +1,17 @@
-function showFormFigure() {
-
-    // Hide all figures
-    document.getElementById('square').classList.add('hide');
-    document.getElementById('triangle').classList.add('hide');
-    document.getElementById('circle').classList.add('hide');
-    
-    // Obtaining selected figure
-    let idName = document.getElementById("figureSelected").value;
-    let elementFigure = document.getElementById(idName);
-
-    // Showing figure selected
-    if(idName != '0') elementFigure.classList.remove('hide');
-
-}
-
 /*******************
 * Square
 ********************/
 
 // Getting side square element
-const sideSquareElment = document.getElementById('sideSquare');
+export const sideSquareElment = document.getElementById('sideSquare');
 
 // Getting element to write results
-let perimeterSquareElement = document.getElementById('perimeterSquare');
-let areaSquareElement = document.getElementById('areaSquare');
+export let perimeterSquareElement = document.getElementById('perimeterSquare');
+export let areaSquareElement = document.getElementById('areaSquare');
 
 // Functions to calculate perimetr and area
-let perimeterSquare = side => side * 4;
-let areaSquare = side => side * side;
-
-// Functions to execute the calculation of the perimeter and area
-function executePerimeterSquare() {
-    let perimeter = perimeterSquare(sideSquareElment.value);
-    perimeterSquareElement.innerHTML = String(perimeter);
-}
-
-function executeAreaSquare() {
-    let area = areaSquare(sideSquareElment.value);
-    areaSquareElement.innerHTML = String(area);
-}
+export let perimeterSquare = side => side * 4;
+export let areaSquare = side => side * side;
 
 /*******************
 * Equilateral Triangle
