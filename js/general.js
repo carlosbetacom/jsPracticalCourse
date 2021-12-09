@@ -1,3 +1,22 @@
+function showBoxFigures() {
+
+    // Hide others box 
+    document.getElementById('pricesBox').classList.add('hide');
+
+    // Showing figures box
+    document.getElementById("figuresBox").classList.remove('hide');
+
+}
+function showBoxPrice() {
+
+    // Hide others box 
+    document.getElementById('figuresBox').classList.add('hide');
+
+    // Showing figures box
+    document.getElementById("pricesBox").classList.remove('hide');
+
+}
+
 function showFormFigure() {
 
     // Hide all figures
@@ -14,4 +33,4 @@ function showFormFigure() {
 
 }
 
-export {showFormFigure};
+export { showBoxFigures, showFormFigure, showBoxPrice };
