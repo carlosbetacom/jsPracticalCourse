@@ -1,19 +1,13 @@
-const precioOriginal = 100;
-const descuento = 15;
+const inputPrice = document.getElementById('inputPrice');
+const inputDiscount = document.getElementById('inputDiscount');
 
-const porcentajePrecioConDescuento = 100 - descuento;
-const precioConDescuento = (precioOriginal * porcentajePrecioConDescuento) / 100;
+const priceWithDiscount = document.getElementById('priceWithDiscount');
 
-console.log({
-    precioOriginal,
-    descuento,
-    porcentajePrecioConDescuento,
-    precioConDescuento
-});
+function calculatingPriceWithDiscount() {
+    const percentagePriceWithDiscout = 100 - Number(inputDiscount.value);
+    const priceWithDiscoutResult = (Number(inputPrice.value) * percentagePriceWithDiscout) / 100;
 
-function calculatingPriceWithDiscount(price, discout) {
-    const percentagePriceWithDiscout = 100 - discout;
-    const priceWithDiscout = (price * percentagePriceWithDiscout) / 100;
-
-    return priceWithDiscout;
+    priceWithDiscount.innerHTML = String(priceWithDiscoutResult);
 }
+
+export { calculatingPriceWithDiscount }
