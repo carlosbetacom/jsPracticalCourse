@@ -12,4 +12,6 @@ document.getElementById("calculateAreaSquare").addEventListener("click", figures
 document.getElementById("sideTriangleA").addEventListener("input", figures.calculateTriangle);
 document.getElementById("radio").addEventListener("input", figures.calculateCircle);
 
-document.getElementById("btnPrices").addEventListener("click", discounts.calculatingPriceWithDiscount);
+discounts.radioCoupon.addEventListener("change", discounts.checkedRadioCoupon);
+discounts.radioPercent.addEventListener("change", discounts.checkedRadioPercent);
+document.getElementById("btnPrices").addEventListener("click", discounts.executeCalculatePriceWithDiscount);

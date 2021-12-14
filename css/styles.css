@@ -155,7 +155,10 @@ input {
  input {
     width: 100%;
 }
- input:disabled {
+input:is([type="radio"]) {
+    width: 1.25rem;
+}
+input:disabled {
     opacity: .5;
 }
 

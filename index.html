@@ -130,18 +130,29 @@
 
             <form>
                 <fieldset>
+                    <legend>¿Cómo deseas calcular el descuento?</legend>
+                    <label for="radioCoupon">
+                        <input type="radio" id="radioCoupon" name="discount" checked>
+                        Con un cupón
+                    </label>
+                    <label for="radioPercent">
+                        <input type="radio" id="radioPercent" name="discount">
+                        Con un porcentaje
+                    </label>
+                </fieldset>
+                <fieldset>
                     <legend>Datos</legend>
                     <label for="inputPrice">
-                        Precio original<br>
+                        Precio original:<br>
                         <input id="inputPrice" type="number" placeholder="0">
                     </label>
                     <label for="inputDiscount">
-                        Porcentaje de descuento<br>
-                        <input id="inputDiscount" type="number" placeholder="0">
+                        Porcentaje de descuento:<br>
+                        <input id="inputDiscount" type="number" placeholder="0" disabled>
                     </label>
-                    <label for="checkCoupon">
-                        ¿Tienes un cupón?<br>
-                        <input id="checkCoupon" type="text" placeholder="Escribe tu cupón aquí...">
+                    <label for="inputCoupon">
+                        Escribe tu cupón:<br>
+                        <input id="inputCoupon" type="text" placeholder="Escribe tu cupón aquí...">
                     </label>
                     <label>
                         Cupones disponibles:<br><b>20OFF, 25OFF, 50OFF.</b>
