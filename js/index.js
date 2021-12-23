@@ -1,6 +1,7 @@
 import * as general from "./general.js";
 import * as figures from "./figures.js";
 import * as discounts from "./discounts.js";
+import * as averageModeMedian from "./averageModeMedian.js";
 
 document.getElementById("figuresBoxBtn").addEventListener("click", general.showBoxFigures);
 document.getElementById("pricesBoxBtn").addEventListener("click", general.showBoxPrice);
@@ -15,3 +16,4 @@ document.getElementById("radio").addEventListener("input", figures.calculateCirc
 discounts.radioCoupon.addEventListener("change", discounts.checkedRadioCoupon);
 discounts.radioPercent.addEventListener("change", discounts.checkedRadioPercent);
 document.getElementById("btnPrices").addEventListener("click", discounts.executeCalculatePriceWithDiscount);
+
